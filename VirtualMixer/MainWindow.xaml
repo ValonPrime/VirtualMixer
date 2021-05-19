@@ -1,0 +1,59 @@
+﻿<Window x:Class="VirtualMixer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VirtualMixer"
+        xmlns:src="clr-namespace:VirtualMixer.Resources"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Closing="Window_Closing"
+        Height="240"
+        Width="428">
+    <Window.Resources>
+        <src:InputDevices x:Key="input_devices"/>
+        <src:OutputDevices x:Key="output_devices"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Style="{StaticResource RowKey}" Grid.Row="0">
+            Input:
+        </TextBlock>
+        <ComboBox Style="{StaticResource RowValue}"
+                  Name="inputDevice"
+                  ItemsSource="{StaticResource input_devices}"
+                  DropDownOpened="ComboBox_DropDownOpened"
+                  Grid.Row="0"/>
+
+        <TextBlock Style="{StaticResource RowKey}" Grid.Row="1">
+            Output:
+        </TextBlock>
+        <ComboBox Style="{StaticResource RowValue}"
+                  Name="outputDevice"
+                  ItemsSource="{StaticResource output_devices}"
+                  DropDownOpened="ComboBox_DropDownOpened"
+                  Grid.Row="1"/>
+
+        <Button Click="Button_Click"
+            Grid.Row="2">
+            Apply
+        </Button>
+
+        <TextBlock Style="{StaticResource RowKey}" Grid.Row="3">
+            Volume:
+        </TextBlock>
+        <Slider Style="{StaticResource RowValue}"
+                ValueChanged="Slider_ValueChanged"
+                Grid.Row="3"/>
+    </Grid>
+</Window>

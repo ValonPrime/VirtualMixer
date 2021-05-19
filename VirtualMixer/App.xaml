@@ -1,0 +1,29 @@
+﻿<Application x:Class="VirtualMixer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:VirtualMixer"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <Style TargetType="FrameworkElement" x:Key="RowKey">
+            <Setter Property="Grid.Column" Value="0"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="6,0,6,0"/>
+        </Style>
+
+        <Style TargetType="Control" x:Key="RowValue">
+            <Setter Property="Grid.Column" Value="1"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="6,4,6,4"/>
+            <Setter Property="Width" Value="auto"/>
+        </Style>
+
+        <Style TargetType="Button" BasedOn="{StaticResource RowValue}">
+            <Setter Property="Grid.Column" Value="0"/>
+            <Setter Property="Grid.ColumnSpan" Value="2"/>
+        </Style>
+
+    </Application.Resources>
+</Application>

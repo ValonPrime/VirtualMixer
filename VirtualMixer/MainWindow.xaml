@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow"
         Closing="Window_Closing"
-        Height="240"
+        Height="180"
         Width="428">
     <Window.Resources>
         <src:InputDevices x:Key="input_devices"/>
@@ -16,7 +16,6 @@
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
@@ -48,12 +47,5 @@
             Grid.Row="2">
             Apply
         </Button>
-
-        <TextBlock Style="{StaticResource RowKey}" Grid.Row="3">
-            Volume:
-        </TextBlock>
-        <Slider Style="{StaticResource RowValue}"
-                ValueChanged="Slider_ValueChanged"
-                Grid.Row="3"/>
     </Grid>
 </Window>

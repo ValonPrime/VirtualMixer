@@ -56,16 +56,5 @@ namespace VirtualMixer
             File.WriteAllText(@"E:\in.txt", lastSelectedInput);
             File.WriteAllText(@"E:\out.txt", lastSelectedOutput);
         }
-
-        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            if(sender is Slider)
-            {
-                float vol = (float)(sender as Slider).Value;
-                router.UpdateVolume(vol);
-            }
-        }
-
-
     }
 }

@@ -18,7 +18,6 @@ namespace VirtualMixer.Models
             source.DeviceNumber = deviceNumber;
             source.BufferMilliseconds = 10;
             source.WaveFormat = new WaveFormat(44100, 2);
-            source.DataAvailable += DataRecive;
 
             WaveInProvider waveIn = new WaveInProvider(source);
 
@@ -29,11 +28,6 @@ namespace VirtualMixer.Models
 
             sink = new DirectSoundOut(outputDeviceID, 40);
             sink.Init(waveIn);
-        }
-
-        private void DataRecive(object sender, WaveInEventArgs e)
-        {
-
         }
 
         public AudioRouteModel Start()

@@ -54,12 +54,5 @@ namespace VirtualMixer.Models
                 sink.Stop();
             }
         }
-
-        public void UpdateVolume(float vol)
-        {
-            //sink. = vol;
-        }
-
-        
     }
 }
